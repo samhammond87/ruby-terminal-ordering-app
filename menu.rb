@@ -17,4 +17,11 @@ class Menu
     def get_items
         return @menu_items
     end
+
+    def display
+        puts "Menu"
+        puts "-----"
+        @menu_items.each {|item| puts item}
+        return nil
+    end
 end

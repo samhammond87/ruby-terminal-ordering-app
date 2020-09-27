@@ -82,4 +82,10 @@ describe Cafe do
         cafe = Cafe.new(name, menu_items)
         expect(cafe.welcome).to eq(nil)
     end
+    it "should define a print_menu method" do
+        name = "My Cafe"
+        menu_items = {latte: 4.00, tea: 2.00}
+        cafe = Cafe.new(name, menu_items) 
+        expect(cafe.print_menu).to eq(nil)
+    end
 end
