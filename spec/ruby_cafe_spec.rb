@@ -76,4 +76,10 @@ describe Cafe do
         cafe.add_to_order(item, quantity)
         expect(cafe.get_order().get_items().length).to be(1)
     end
+    it "should define a welcome method" do
+        name = "My Cafe"
+        menu_items = {latte: 4.00, tea: 2.00}
+        cafe = Cafe.new(name, menu_items)
+        expect(cafe.welcome).to eq(nil)
+    end
 end
