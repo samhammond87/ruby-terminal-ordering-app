@@ -6,6 +6,6 @@ class MenuItem
     end
 
     def to_s # overides to_s method for better formatting
-        return "#{@name}" + " " *(10 - @name.length) + "... #{@price}"   
+        return "#{@name}" + " " *(15 - @name.length) + "... #{@price}"   
     end
 end

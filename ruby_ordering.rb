@@ -1,7 +1,7 @@
 require_relative './cafe'
 
 # Create an instance of cafe
-menu = {"latte" => 4.00, "tea" => 3.00, "toastie" => 5.00}
+menu = {"pad thai" => 12.00, "green curry" => 15.00, "coke" => 3.50}
 cafe = Cafe.new("Sam's Cafe", menu)
 
 puts
