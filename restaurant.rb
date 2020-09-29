@@ -20,7 +20,7 @@ class Restaurant
         @order.add_item(item, quantity)
     end
     
-    def get_order
+    def find_order
         return @order
     end
 

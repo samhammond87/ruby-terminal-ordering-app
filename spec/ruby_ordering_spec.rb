@@ -24,14 +24,14 @@ describe Menu do
         price = 3.50
         menu = Menu.new
         menu.add_item(name, price)
-        expect(menu.get_price(name)).to eq(price)
+        expect(menu.find_price(name)).to eq(price)
     end
     it "should be able to add an item" do
         name = "coke"
         price = 3.50
         menu = Menu.new
         menu.add_item(name, price)
-        expect(menu.get_items().length).to be(1)        
+        expect(menu.find_items().length).to be(1)        
     end
     it "should return the item name for a valid item" do
         name = "coke"
@@ -55,7 +55,7 @@ describe Order do
         quantity = 2
         order.add_item(name, 2)
         order.add_item(name, 3)
-        expect(order.get_items().length).to be(1)
+        expect(order.find_items().length).to be(1)
     end
     it "should update an item quantity" do
         order = Order.new
@@ -64,7 +64,7 @@ describe Order do
         quantity_add = 3
         order.add_item(name, quantity)
         order.add_item(name, quantity_add)
-        expect(order.get_items()[name]).to be(quantity + quantity_add)
+        expect(order.find_items()[name]).to be(quantity + quantity_add)
     end
 end
     
@@ -79,7 +79,7 @@ describe Restaurant do
         name = ""
         menu_items = {coke: 3.50, "pad thai" => 12.00}
         restaurant = Restaurant.new(name, menu_items)
-        expect(restaurant.menu.get_items.length).to be(2) 
+        expect(restaurant.menu.find_items.length).to be(2) 
     end  
     it "should add an item to order" do
         name = ""
@@ -88,7 +88,7 @@ describe Restaurant do
         item = "coke"
         quantity = 1
         restaurant.add_to_order(item, quantity)
-        expect(restaurant.get_order().get_items().length).to be(1)
+        expect(restaurant.find_order().find_items().length).to be(1)
     end
     it "should define a welcome method" do
         name = ""
