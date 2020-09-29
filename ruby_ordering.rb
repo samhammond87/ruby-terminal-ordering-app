@@ -1,33 +1,31 @@
-require_relative './cafe'
+require_relative './restaurant.rb'
 
-# Create an instance of cafe
-menu = {"pad thai" => 12.00, "green curry" => 15.00, "coke" => 3.50}
-cafe = Cafe.new("Sam's Cafe", menu)
+menu = {"red curry" => 15.00, "green curry" => 15.00, "beef massaman" => 15.50, "pad thai" => 12.50, "pad see ew" => 12.50, "pad kee mao" => 12.50, "cashew nut" => 12.00, "chilli basil" => 15.00, "tom yum soup" => 5.00, "coke" => 3.50, "ice tea" => 3.50, "water" => 3.00}
+restaurant = Restaurant.new("Sam's New World Thai Restaurant", menu)
 
 puts
-cafe.welcome
+restaurant.welcome
 puts 
 loop do
-    cafe.print_menu
+    restaurant.print_menu
     puts
     puts "What would you like to order? When you are finished, type 'done'"
     input = gets.strip.downcase
-   
-    # if 'done', break from loop
+    
     if (input == "done")
         break
     end
 
-    # Check for valid menu item
-    item = cafe.menu.validate_item(input)
+    item = restaurant.menu.validate_item(input)
     if (item)
         puts "How many would you like?"
         quantity = gets.to_i
         if (quantity > 0)
-            cafe.add_to_order(item, quantity)
+            restaurant.add_to_order(item, quantity)
         end
     end
 end
 
-# print the order summary
-cafe.print_order
+puts
+restaurant.print_order
+puts

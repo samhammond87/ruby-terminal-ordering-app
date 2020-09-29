@@ -1,7 +1,7 @@
 require_relative './menu'
 require_relative './order'
 
-class Cafe
+class Restaurant
     attr_reader :name, :menu
     def initialize(name, menu_items)
         @name = name
