@@ -1,4 +1,5 @@
 require_relative './menu_item'
+require 'colorize'
 
 class Menu
     def initialize
@@ -9,18 +10,19 @@ class Menu
         @menu_items << menu_item 
     end
 
-    def get_price(name)
+    def find_price(name)
         item = @menu_items.find {|menu_item| menu_item.name === name}
         return item.price
     end
 
-    def get_items
+    def find_items
         return @menu_items
     end
 
     def display
-        puts "Menu"
-        puts "-----"
+        puts "Sam's Totally Trustworthy Sustenance Options for Humans".colorize(:blue)
+        puts "-----".colorize(:blue) * 11
+        puts
         @menu_items.each {|item| puts item}
         return nil
     end

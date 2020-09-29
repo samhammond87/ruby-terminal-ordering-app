@@ -6,11 +6,11 @@ class Restaurant
     def initialize(name, menu_items)
         @name = name
         @menu = Menu.new
-        populate_menu(menu_items)
+        fill_menu(menu_items)
         @order = Order.new
     end
    
-    def populate_menu(menu_items)
+    def fill_menu(menu_items)
         menu_items.each do |name, price| 
             @menu.add_item(name, price)
         end
@@ -29,13 +29,13 @@ class Restaurant
     end
 
     def print_menu
-        @menu.display
+        return @menu.display
     end
 
     def order_total
         total = 0
-        @order.get_items.each do |item,quantity|
-            total += @menu.get_price(item)* quantity
+        @order.find_items.each do |item,quantity|
+            total += @menu.find_price(item)* quantity
         end
         return total
     end

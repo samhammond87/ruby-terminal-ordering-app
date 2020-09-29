@@ -7,7 +7,7 @@ class Order
         @order_items[name] += quantity 
                 #     ^ key     ^ value
     end
-    def get_items
+    def find_items
         return @order_items
     end
 end
