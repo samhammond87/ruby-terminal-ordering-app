@@ -9,9 +9,11 @@ menu = {"red curry" => 15.00, "green curry" => 15.00, "beef massaman" => 15.50, 
 
 restaurant = Restaurant.new("Sam's New-World Thai Restaurant", menu)
 
-puts
-restaurant.welcome
+puts restaurant.welcome_art
+
+restaurant.intro
 puts 
+
 loop do
     restaurant.print_menu
     puts

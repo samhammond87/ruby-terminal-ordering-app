@@ -25,8 +25,14 @@ class Restaurant
         return @order
     end
 
-    def welcome
-        puts "Welcome to #{name}!".colorize(:magenta)
+    def welcome_art
+        File.readlines("ascii_welcome_art.txt") do |line|
+          puts line
+        end
+    end
+
+    def intro
+        puts "At #{name} Ordering Is Easier Than Ever!".colorize(:magenta)
     end
 
     def print_menu
@@ -43,7 +49,8 @@ class Restaurant
     
     # Need help figuring out if/else statement
     def print_order  
-        if @order_total == 0
+        total = 0
+        if total == @order_total
             puts "Thank you for coming!".colorize(:magenta)
         else
             puts "Total:    $%.2f".colorize(:magenta) % order_total

@@ -4,4 +4,4 @@ def render_ascii_art
     end
 end
 
-p render_ascii_art
+puts render_ascii_art
