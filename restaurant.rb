@@ -1,5 +1,6 @@
 require_relative './menu'
 require_relative './order'
+require 'colorize'
 
 class Restaurant
     attr_reader :name, :menu
@@ -25,7 +26,7 @@ class Restaurant
     end
 
     def welcome
-        puts "Welcome to #{name}!"
+        puts "Welcome to #{name}!".colorize(:blue)
     end
 
     def print_menu
@@ -40,11 +41,12 @@ class Restaurant
         return total
     end
     
+    # Need help figuring out if/else statement
     def print_order  
-        if @order 
-            puts "Total:    $%.2f" % order_total
-        else
+        if @order_total == 0
             puts "Thank you for coming!"
+        else
+            puts "Total:    $%.2f" % order_total
         end
     end
 end

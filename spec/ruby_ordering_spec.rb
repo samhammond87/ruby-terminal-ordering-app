@@ -57,7 +57,7 @@ describe Order do
         order.add_item(name, 3)
         expect(order.find_items().length).to be(1)
     end
-    it "should update an item quantity" do
+    it "should add an item quantity" do
         order = Order.new
         name = "coke"
         quantity = 2
@@ -103,7 +103,7 @@ describe Restaurant do
         expect(restaurant.print_menu).to eq(nil)
     end
 
-    it "should calculate order total" do
+    it "should work out the order total" do
         name = ""
         menu_items = {"coke" => 3.50, "pad thai" => 12.00}
         restaurant = Restaurant.new(name, menu_items)
