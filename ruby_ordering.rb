@@ -15,7 +15,7 @@ puts
 loop do
     restaurant.print_menu
     puts
-    puts "What would you like to order? When you are finished, type 'done'".colorize(:blue)
+    puts "What would you like to order? When you are finished, type 'done'".colorize(:magenta)
     input = gets.strip.downcase
     
     if (input == "done")
@@ -24,7 +24,7 @@ loop do
 
     item = restaurant.menu.validate_item(input)
     if (item)
-        puts "How many would you like?"
+        puts "How many would you like?".colorize(:magenta)
         quantity = gets.to_i
         if (quantity > 0)
             restaurant.add_to_order(item, quantity)

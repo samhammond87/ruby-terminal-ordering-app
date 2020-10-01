@@ -26,7 +26,7 @@ class Restaurant
     end
 
     def welcome
-        puts "Welcome to #{name}!".colorize(:blue)
+        puts "Welcome to #{name}!".colorize(:magenta)
     end
 
     def print_menu
@@ -44,9 +44,9 @@ class Restaurant
     # Need help figuring out if/else statement
     def print_order  
         if @order_total == 0
-            puts "Thank you for coming!"
+            puts "Thank you for coming!".colorize(:magenta)
         else
-            puts "Total:    $%.2f" % order_total
+            puts "Total:    $%.2f".colorize(:magenta) % order_total
         end
     end
 end

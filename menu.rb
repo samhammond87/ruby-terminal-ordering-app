@@ -20,8 +20,8 @@ class Menu
     end
 
     def display
-        puts "Sam's Totally Trustworthy Sustenance Options for Humans".colorize(:blue)
-        puts "-----".colorize(:blue) * 11
+        puts "Sam's Totally Trustworthy Sustenance Options for Humans".colorize(:magenta)
+        puts "-----".colorize(:magenta) * 11
         puts
         @menu_items.each {|item| puts item}
         return nil
