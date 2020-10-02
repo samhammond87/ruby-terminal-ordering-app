@@ -1,7 +1,9 @@
 require_relative './restaurant.rb'
 require 'colorize'
+require 'tty-table'
 
-menu = {"red curry" => 15.00, "green curry" => 15.00, "beef massaman" => 15.50, "pad thai" => 12.50, "pad see ew" => 12.50, "pad kee mao" => 12.50, "cashew nut" => 12.00, "chilli basil" => 12.00, "tom yum soup" => 5.00, "coke" => 3.50, "ice tea" => 3.50, "water" => 3.00}
+
+menu = {"RED CURRY" => 15.00, "GREEN CURRY" => 15.00, "BEEF MASSAMAN" => 15.50, "PAD THAI" => 12.50, "PAD SEE EW" => 12.50, "PAD KEE MAO" => 12.50, "CASHEW NUT" => 12.00, "CHILLI BASIL" => 12.00, "TOM YUM SOUP" => 5.00, "COKE" => 3.50, "ICE TEA" => 3.50, "WATER" => 3.00}
 
 restaurant = Restaurant.new("Sam's New-World Restaurant", menu)
 puts
@@ -14,7 +16,7 @@ puts
 loop do
 
     puts "What would you like to order? Type your choice, then hit enter. When you are finished, type 'done'\n".colorize(:magenta).bold
-    input = gets.strip.downcase
+    input = gets.strip.upcase
     puts
     item = restaurant.menu.check_item(input)
  
@@ -22,7 +24,7 @@ loop do
         puts "Sorry, please check the spelling and try again\n".colorize(:cyan)
     end
 
-    if (input == "done")
+    if (input == "DONE")
         break
     end
 
@@ -37,8 +39,9 @@ loop do
         end
     end
 end
+
 system "clear"
-restaurant.daily_orders
 restaurant.print_order
 puts restaurant.goodbye_art
+restaurant.daily_orders
 restaurant.review_app
