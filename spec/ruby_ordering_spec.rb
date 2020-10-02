@@ -77,35 +77,29 @@ describe Restaurant do
     end
     it "should create a restaurant with a menu" do
         name = ""
-        menu_items = {coke: 3.50, "pad thai" => 12.00}
+        menu_items = {"coke" => 3.50, "pad thai" => 12.50}
         restaurant = Restaurant.new(name, menu_items)
         expect(restaurant.menu.find_items.length).to be(2) 
     end  
     it "should add an item to order" do
         name = ""
-        menu_items = {coke: 3.50, "pad thai" => 12.00}
+        menu_items = {coke: 3.50, "pad thai" => 12.50}
         restaurant = Restaurant.new(name, menu_items)
         item = "coke"
         quantity = 1
         restaurant.add_to_order(item, quantity)
         expect(restaurant.find_order().find_items().length).to be(1)
     end
-    it "should define a welcome method" do
-        name = ""
-        menu_items = {coke: 3.50, "pad thai" => 12.00}
-        restaurant = Restaurant.new(name, menu_items)
-        expect(restaurant.welcome).to eq(nil)
-    end
     it "should define a print_menu method" do
         name = ""
-        menu_items = {coke: 3.50, "pad thai" => 12.00}
+        menu_items = {coke: 3.50, "pad thai" => 12.50}
         restaurant = Restaurant.new(name, menu_items) 
         expect(restaurant.print_menu).to eq(nil)
     end
 
     it "should work out the order total" do
         name = ""
-        menu_items = {"coke" => 3.50, "pad thai" => 12.00}
+        menu_items = {"coke" => 3.50, "pad thai" => 12.50}
         restaurant = Restaurant.new(name, menu_items)
         item = "coke"
         quantity = 1

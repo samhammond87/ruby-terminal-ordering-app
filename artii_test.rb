@@ -1,3 +1,0 @@
-require 'artii'
-
-artii "Art!"

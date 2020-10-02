@@ -20,8 +20,8 @@ class Restaurant
         end
     end
 
-    def add_to_order(item, quantity)
-        @order.add_item(item, quantity)
+    def add_to_order(item, amount)
+        @order.add_item(item, amount)
     end
     
     def find_order
@@ -53,8 +53,8 @@ class Restaurant
 
     def order_total
         total = 0
-        @order.find_items.each do |item,quantity|
-            total += @menu.find_price(item)* quantity
+        @order.find_items.each do |item,amount|
+            total += @menu.find_price(item)* amount
         end
         return total
     end
