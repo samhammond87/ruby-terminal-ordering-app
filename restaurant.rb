@@ -31,6 +31,15 @@ class Restaurant
         end
     end
 
+    def goodbye_art
+        puts
+        puts "Your order has been processed!\n\nThanks for using:".colorize(:cyan).bold
+        puts
+        File.readlines("ascii_goodbye_art.txt") do |line|
+          puts line
+        end
+    end
+
     def intro
         puts "At #{name} Ordering Is Easier Than Ever!".colorize(:magenta)
     end
@@ -48,13 +57,17 @@ class Restaurant
     end
     
     # Need help figuring out if/else statement
+    # def print_order  
+    #     total = 0
+    #     if total == @order_total
+    #         puts "Thank you for coming!".colorize(:magenta)
+    #     else
+    #         puts "Total:    $%.2f".colorize(:magenta) % order_total
+    #     end
+    # end
     def print_order  
-        total = 0
-        if total == @order_total
-            puts "Thank you for coming!".colorize(:magenta)
-        else
-            puts "Total:    $%.2f".colorize(:magenta) % order_total
-        end
+        puts
+        puts "Total:    $%.2f".colorize(:cyan).bold % order_total
     end
 end
 

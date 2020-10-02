@@ -1,0 +1,3 @@
+require 'artii'
+
+artii "Art!"

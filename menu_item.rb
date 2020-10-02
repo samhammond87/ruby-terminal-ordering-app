@@ -6,6 +6,6 @@ class MenuItem
     end
 
     def to_s # overides to_s method for better formatting
-        return "#{@name}".colorize(:magenta) + " " *(15 - @name.length) + "... #{@price}".colorize(:magenta)   
+        return "            #{@name}".colorize(:magenta) + " " *(20 - @name.length) + ".....  #{@price}".colorize(:magenta)   
     end
 end
