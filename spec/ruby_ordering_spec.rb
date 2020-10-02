@@ -38,14 +38,14 @@ describe Menu do
         price = 3.50
         menu = Menu.new
         menu.add_item(name, price)
-        expect(menu.validate_item(name)).to eq(name)
+        expect(menu.check_item(name)).to eq(name)
     end
     it "should return nil for an invalid item" do
         name = "coke"
         price = 3.50
         menu = Menu.new
         menu.add_item(name, price)
-        expect(menu.validate_item("pad thai")).to eq(nil)
+        expect(menu.check_item("cok")).to eq(nil)
     end
 end
 describe Order do

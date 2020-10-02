@@ -16,7 +16,7 @@ loop do
     puts "What would you like to order? Type your choice, then hit enter. When you are finished, type 'done'\n".colorize(:magenta).bold
     input = gets.strip.downcase
     puts
-    item = restaurant.menu.validate_item(input)
+    item = restaurant.menu.check_item(input)
  
     if item == nil
         puts "Sorry, please check the spelling and try again\n".colorize(:cyan)

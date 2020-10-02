@@ -63,14 +63,15 @@ class Restaurant
     end
 
     def daily_orders
-        File.write("daily_orders.txt", "$%.2f" % "#{order_total}\n", mode: "a")
+        File.write("daily_orders.txt", "$%.2f" % "#{order_total}", mode: "a")
     end
 
     def review_app
-        prompt = TTY::Prompt.new
+        prompt = TTY::Prompt.new(active_color: :cyan)
         puts "Before You Go!".colorize(:magenta).bold
         puts
-        prompt.select("How easy was Sams Terminal App to use?".colorize(:magenta), %w(Easy-Peasy Normal Hard Impossible))
+        review = prompt.select("How easy was Sams Terminal App to use?".colorize(:magenta), %w(Easy-Peasy Normal Hard Impossible))
+        File.write("daily_orders.txt", " - #{review}\n", mode: "a")
         puts
         puts "Thanks for letting us know!".colorize(:magenta).bold
     end
