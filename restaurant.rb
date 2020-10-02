@@ -3,8 +3,6 @@ require_relative './order'
 require 'colorize'
 require "tty-prompt"
 
-prompt = TTY::Prompt.new
-
 class Restaurant
     attr_reader :name, :menu
     def initialize(name, menu_items)
@@ -59,18 +57,18 @@ class Restaurant
         return total
     end
     
-    # Need help figuring out if/else statement
-    # def print_order  
-    #     total = 0
-    #     if total == @order_total
-    #         puts "Thank you for coming!".colorize(:magenta)
-    #     else
-    #         puts "Total:    $%.2f".colorize(:magenta) % order_total
-    #     end
-    # end
     def print_order  
         puts
         puts "Your order has been processed!\n\nTotal:    $%.2f".colorize(:cyan).bold % order_total
+    end
+
+    def review_app
+        prompt = TTY::Prompt.new
+        puts "Before You Go!".colorize(:magenta).bold
+        puts
+        prompt.select("How easy was Sams Terminal App to use?".colorize(:magenta), %w(Easy-Peasy Normal Hard Impossible))
+        puts
+        puts "Thanks for letting us know!".colorize(:magenta).bold
     end
 end
 

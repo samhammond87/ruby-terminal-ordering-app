@@ -1,8 +1,5 @@
 require_relative './restaurant.rb'
 require 'colorize'
-require "tty-prompt"
-
-prompt = TTY::Prompt.new
 
 menu = {"red curry" => 15.00, "green curry" => 15.00, "beef massaman" => 15.50, "pad thai" => 12.50, "pad see ew" => 12.50, "pad kee mao" => 12.50, "cashew nut" => 12.00, "chilli basil" => 12.00, "tom yum soup" => 5.00, "coke" => 3.50, "ice tea" => 3.50, "water" => 3.00}
 
@@ -20,11 +17,9 @@ loop do
     input = gets.strip.downcase
     puts
     item = restaurant.menu.validate_item(input)
-    # if (menu.menu_item.name != name)
-    #     puts "Sorry, Please check the spelling and try again!"
-    # end
+ 
     if item == nil
-        puts "Sorry, Please check the spelling and try again\n".colorize(:cyan)
+        puts "Sorry, please check the spelling and try again\n".colorize(:cyan)
     end
 
     if (input == "done")
@@ -38,17 +33,13 @@ loop do
         puts
         if (amount > 0)
             restaurant.add_to_order(item, amount)
-        else puts "Sorry, Please try again\n".colorize(:cyan)
+        else puts "Sorry, please enter a valid number and start again\n".colorize(:cyan)
         end
     end
 end
 system "clear"
 puts
+File.write("daily_orders.txt", "$%.2f" % "#{restaurant.order_total}\n", mode: "a")
 restaurant.print_order
 puts restaurant.goodbye_art
-
-puts "Before You Go!".colorize(:magenta)
-puts
-prompt.select("How easy was Sams Terminal App to use?".colorize(:magenta), %w(Easy-Peasy Normal Hard Impossible))
-puts
-puts "Thanks for letting us know!".colorize(:magenta)
+restaurant.review_app
