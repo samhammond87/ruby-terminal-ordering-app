@@ -1,6 +1,9 @@
 require_relative './menu'
 require_relative './order'
 require 'colorize'
+require "tty-prompt"
+
+prompt = TTY::Prompt.new
 
 class Restaurant
     attr_reader :name, :menu
@@ -33,7 +36,7 @@ class Restaurant
 
     def goodbye_art
         puts
-        puts "Your order has been processed!\n\nThanks for using:".colorize(:cyan).bold
+        puts "Thanks for using:".colorize(:cyan).bold
         puts
         File.readlines("ascii_goodbye_art.txt") do |line|
           puts line
@@ -67,7 +70,7 @@ class Restaurant
     # end
     def print_order  
         puts
-        puts "Total:    $%.2f".colorize(:cyan).bold % order_total
+        puts "Your order has been processed!\n\nTotal:    $%.2f".colorize(:cyan).bold % order_total
     end
 end
 
