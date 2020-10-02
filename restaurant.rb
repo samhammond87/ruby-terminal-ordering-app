@@ -62,6 +62,10 @@ class Restaurant
         puts "Your order has been processed!\n\nTotal:    $%.2f".colorize(:cyan).bold % order_total
     end
 
+    def daily_orders
+        File.write("daily_orders.txt", "$%.2f" % "#{order_total}\n", mode: "a")
+    end
+
     def review_app
         prompt = TTY::Prompt.new
         puts "Before You Go!".colorize(:magenta).bold

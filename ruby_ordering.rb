@@ -38,8 +38,7 @@ loop do
     end
 end
 system "clear"
-puts
-File.write("daily_orders.txt", "$%.2f" % "#{restaurant.order_total}\n", mode: "a")
+restaurant.daily_orders
 restaurant.print_order
 puts restaurant.goodbye_art
 restaurant.review_app
