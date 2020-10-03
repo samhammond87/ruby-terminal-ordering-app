@@ -95,16 +95,17 @@ An employee will be able to interact with customer orders, amount sold in the da
 
 ## **Link to My Implementation Plan**
 
-[Trello link]([https://trello.com/b/GQvPB7Hp/terminal-ordering-app](https://trello.com/b/GQvPB7Hp/terminal-ordering-app))
+[Trello link](https://trello.com/b/GQvPB7Hp/terminal-ordering-app)
 
 I regret not taking a screenshot when I first created my plan, but below is a screenshot of where I was up to with 5 days left until my deadline:
+
 
 ![Trello image](./docs/trello.png)
 
 ## **Instructions for Installation and Use**
 
-- Once published, you can clone or download the Ordering-App from my [Github page]([https://github.com/samhammond87/ruby-terminal-ordering-app](https://github.com/samhammond87/ruby-terminal-ordering-app))
-- You will need ruby installed on your computer. You can download it by clicking this [link]([https://www.ruby-lang.org/en/](https://www.ruby-lang.org/en/))
+- Once published, you can clone or download the Ordering-App from my [Github page](https://github.com/samhammond87/ruby-terminal-ordering-app)
+- You will need ruby installed on your computer. You can download it by clicking this [link](https://www.ruby-lang.org/en/)
 - You will also need the Bundler gem installed. It should come installed with Ruby but you can also install it with the following input into your terminal: *gem install bundler*
 - To install the gems, go to the src location of the app on your terminal and use the command: *bundle install*
 - Run the app from the same location with the bash script: *./run_app.sh*
@@ -116,6 +117,6 @@ I regret not taking a screenshot when I first created my plan, but below is a sc
 
 ### **Link to my slide deck for the W.I.P presentation as the videos won’t work in a pdf:**
 
-[LINK]([https://www.canva.com/design/DAEJNnNKIL8/aaF75F60VgUJKEfFVg8fWg/view?utm_content=DAEJNnNKIL8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink](https://www.canva.com/design/DAEJNnNKIL8/aaF75F60VgUJKEfFVg8fWg/view?utm_content=DAEJNnNKIL8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)) 
+[LINK](https://www.canva.com/design/DAEJNnNKIL8/aaF75F60VgUJKEfFVg8fWg/view?utm_content=DAEJNnNKIL8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
 ![Ppt screenshot of video](./docs/ppt_screenshot.png)
