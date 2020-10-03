@@ -61,7 +61,7 @@ class Restaurant
         puts
         puts "Your order has been processed!\n\nTotal:    $%.2f".colorize(:cyan).bold % order_total
     end
-
+    
     def daily_orders
         File.write("daily_orders.txt", "$%.2f" % "#{order_total}", mode: "a")
     end
