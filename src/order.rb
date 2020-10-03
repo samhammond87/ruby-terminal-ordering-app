@@ -5,13 +5,10 @@ class Order
     def add_item(name, amount)
         @order_items[name] += amount
                 #     ^ key     ^ value
-        return 
+        File.write("user_order_items.txt", "#{name}" + " - " + "#{amount}, ", mode: "a")
+        # return 
     end
     def find_items
         return @order_items
     end
-    # def user_order
-    #     # @order.find_items.each do |item,amount|
-    #     File.write("user_order_items.txt", " - #{add_item}\n", mode: "a")
-    # end
 end

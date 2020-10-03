@@ -61,6 +61,5 @@ end
 system "clear"
 restaurant.print_order
 puts restaurant.goodbye_art
-# order.user_order
 restaurant.daily_orders
 restaurant.review_app

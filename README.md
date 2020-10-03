@@ -15,6 +15,7 @@ To clarify, the features of the app will involve:
 - A ‘welcome’ and ‘goodbye’ message using ASCII art,
 - A loop to continue taking orders until all customers have finished including quantities,
 - A highly-customisable menu and code to allow quick implementation for a large number of businesses,
+- A receipt with the total calculated and printed,
 - A survey that uses TTY prompt to simplify the experience (making it more likely for the customer to leave a review)
 - Creating txt files for kitchen orders, total amounts, and survey results.
 
@@ -54,11 +55,23 @@ I will separate the code into classes to help quick installation over a variety 
 
 ### **Creating txt files for kitchen orders, total amounts, and survey results:**
 
-A .txt file will be created for the orders, total and survey. This will help management keep track of the daily sales and help me refine later versions with the feedback given in the survey. To do this I will define a method that utilises the ‘File’ class in Ruby and call it towards the end of the program.
+.txt files will be created for the orders, cash sales, and survey. This will help management keep track of the daily sales and help me refine later versions with the feedback given in the survey. To do this for the total amount & survey I will define a method that utilises the ‘File’ class in Ruby and call it towards the end of the program. Orders and amount will go to the kitchen as soon as the customer orders the item.
 
-![Text file code](./docs/txt_file_code.png)
+![Sales & survey file code](./docs/txt_file_code.png)
 
-![Text file code](./docs/text_file_2.png)
+![Sales & survey file](./docs/text_file_2.png)
+
+![Kitchen code](./docs/kitchen_code.png)
+
+![Kitchen items](./docs/kitchen_items.png)
+
+### **Total calculated and printed on receipt:**
+
+The item price will be multiplied by the quantity and then added to the total.  The bill will then be printed-out once the user types '*done'.*
+
+![Total order](./docs/order_total.png)
+
+![Total code](./docs/total_code.png)
 
 ## **Outline of User Interaction & Experience:**
 
@@ -66,7 +79,7 @@ There will be two different experiences which depends on whether the user is a c
 
 ### **Customer User:**
 
-The customer will be greeted with a welcome message that is more than just a title, followed by a print-out of the menu available to them. They will find out how to interact with the app by following the simplified instructions that prints-out underneath the menu. If the user follows the first instruction correctly, they will input their order into the command line and push ‘enter’. The same method is then used to receive how many of that item they would like. The customer will keep interacting with the loop feature until they complete their order, once complete, the simple instructions make it clear to type ‘done’. This will clear the screen and print the receipt, with some art created with a Ruby gem. The customer will then be asked to answer a one-question survey with a list of 4 options they can use the arrow keys to cycle through if they have the time.
+The customer will be greeted with a welcome message that is more than just a title, followed by a print-out of the menu available to them. They will find out how to interact with the app by following the simplified instructions that prints-out underneath the menu. If the user follows the first instruction correctly, they will input their order into the command line and push ‘enter’. The same method is then used to get how many of that item they would like. The customer will keep interacting with the loop feature until they complete their order, once complete, the simple instructions make it clear to type ‘done’. This will clear the screen and print the receipt, with some art created with a Ruby gem. The customer will then be asked to answer a one-question survey with a list of 4 options they can use the arrow keys to cycle through if they have the time.
 
 If the customer ever types an invalid input they will receive a friendly message asking them to please try again. This includes ordering ‘0’ of something.
 
@@ -97,10 +110,12 @@ I regret not taking a screenshot when I first created my plan, but below is a sc
 - Run the app from the same location with the bash script: *./run_app.sh*
 - The app should run on all 21st Century computers
 - For more information about the app before running it type *ruby main.rb* followed by:
-    - a or -all … list all commands
-    - h or -help ... show help
-    - v or -version ... show which version is installed
+    - -a or -all … list all commands
+    - -h or -help ... show help
+    - -v or -version ... show which version is installed
 
-**Link to my slide deck for the W.I.P presentation as the videos won’t work in a pdf:**
+### **Link to my slide deck for the W.I.P presentation as the videos won’t work in a pdf:**
 
-[SLIDE DECK LINK]([https://www.canva.com/design/DAEJNnNKIL8/aaF75F60VgUJKEfFVg8fWg/view?utm_content=DAEJNnNKIL8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink](https://www.canva.com/design/DAEJNnNKIL8/aaF75F60VgUJKEfFVg8fWg/view?utm_content=DAEJNnNKIL8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink))
+[LINK]([https://www.canva.com/design/DAEJNnNKIL8/aaF75F60VgUJKEfFVg8fWg/view?utm_content=DAEJNnNKIL8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink](https://www.canva.com/design/DAEJNnNKIL8/aaF75F60VgUJKEfFVg8fWg/view?utm_content=DAEJNnNKIL8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)) 
+
+![Ppt screenshot of video](./docs/ppt_screenshot.png)
