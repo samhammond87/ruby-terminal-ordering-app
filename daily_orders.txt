@@ -1,2 +1,13 @@
 $37.50 - Hard
 $42.00 - Normal
+$0.00 - Easy-Peasy
+$85.00 - Easy-Peasy
+$30.00 - Easy-Peasy
+$12.00 - Easy-Peasy
+$15.50 - Easy-Peasy
+$0.00 - Easy-Peasy
+$0.00 - Normal
+$77.50 - Hard
+$0.00 - Easy-Peasy
+$0.00 - Normal
+$150.00 - Impossible

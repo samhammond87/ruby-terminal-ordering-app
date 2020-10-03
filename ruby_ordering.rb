@@ -5,12 +5,12 @@ require 'tty-table'
 
 if ARGV[0] == "-a" || ARGV[0] == "-all"
     puts "
-    -a              list all command line arguments
-    -all            list all command line arguments
-    -h              help
-    -help           help
-    -v              show version information
-    -version        show version information"
+    -a              list all commands
+    -all            list all commands
+    -h              show help
+    -help           show help
+    -v              show which version is installed
+    -version        show which version installed"
     puts
     exit
 elsif ARGV[0] == "-h" || ARGV[0] == "-help"
@@ -39,14 +39,14 @@ loop do
     puts
     item = restaurant.menu.check_item(input)
  
-    if item == nil
-        puts "Sorry, please check the spelling and try again\n".colorize(:cyan)
-    end
-
     if (input == "DONE")
         break
     end
-
+    
+    if item == nil
+        puts "Sorry, please check the spelling and try again\n".colorize(:cyan)
+    end
+    
     if (item)
         puts "How many would you like?\n".colorize(:magenta).bold
         amount = gets.to_i
