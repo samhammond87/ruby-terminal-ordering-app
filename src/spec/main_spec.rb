@@ -7,7 +7,7 @@ require_relative '../order'
 
 # To start the test, type 'rspec' into the terminal, there are 6 successful tests to help prove a working model.  These tests were invaluable while testing error handling of the app.
 
-# I've made the titles as descriptive as possible to make it clear what each test is checking
+# I've made the titles as descriptive as possible to make it clear what each test is 
 
 describe Menu do
     it "should be able to get an item price" do
