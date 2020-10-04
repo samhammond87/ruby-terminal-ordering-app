@@ -5,9 +5,9 @@ require_relative '../order'
 
 # OUTLINE OF TESTING PROCEDURE:
 
-# To start the test, type 'rspec' into the terminal, there are 6 successful tests to help prove a working model.  These tests were invaluable while testing error handling of the app.
+# To start the test, navigate to the src folder and type 'rspec' into the terminal, there are 6 successful tests to help prove a working model.  These tests were invaluable while testing error handling of the app.
 
-# I've made the titles as descriptive as possible to make it clear what each test is 
+# I've made the titles as descriptive as possible to make it clear what each test does. 
 
 describe Menu do
     it "should be able to get an item price" do
@@ -48,7 +48,7 @@ end
   
 describe Restaurant do    
     
-    it "should create a restaurant with a name and menu" do
+    it "should create a unique restaurant with a name and menu" do
         name = ""
         menu_items = {"coke" => 3.50, "pad thai" => 12.50}
         restaurant = Restaurant.new(name, menu_items)
@@ -56,7 +56,7 @@ describe Restaurant do
         expect(restaurant.menu.find_items.length).to be(2) 
     end  
 
-    it "should work out the order total" do
+    it "should work out the price of the entire order" do
         name = ""
         menu_items = {"coke" => 3.50, "pad thai" => 12.50}
         restaurant = Restaurant.new(name, menu_items)

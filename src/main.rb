@@ -3,6 +3,8 @@ require_relative './order.rb'
 require 'colorize'
 require 'tty-table'
 
+# Extensive use of Colorize gem throughout the whole code
+
 if ARGV[0] == "-a" || ARGV[0] == "-all"
     puts "
     -a              list all commands

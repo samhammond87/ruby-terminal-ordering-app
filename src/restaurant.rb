@@ -27,7 +27,7 @@ class Restaurant
     end
 
     def welcome_art
-        File.readlines("ascii_welcome_art.txt") do |line|
+        File.readlines("ascii_welcome_art.txt") do |line| # Used artii gem
           puts line
         end
     end
@@ -36,7 +36,7 @@ class Restaurant
         puts
         puts "Thanks for using:".colorize(:cyan).bold
         puts
-        File.readlines("ascii_goodbye_art.txt") do |line|
+        File.readlines("ascii_goodbye_art.txt") do |line| # Used artii gem 
           puts line
         end
     end
